@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Registration Page v2</title>
+  <title>Registration Page v5</title>
 
   <!-- Google Font: Source Sans Pro -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
@@ -34,7 +34,7 @@
       <div class="col-md-12">
         <!-- jquery validation -->
         
-        <form action="{{ route('signup', ['lang'=>$lang, 'id'=>$id]) }}" method="POST">
+        <form id="signupform" action="{{ route('signup', ['lang'=>$lang, 'id'=>$id]) }}" method="POST">
 
           @csrf
           <div>
@@ -72,15 +72,25 @@
           </div>
 
           <div class="form-check">
-            <input type="checkbox" class="form-check-input" id="Check1" name="Check1">
-            <label class="form-check-label" for="Check1">Agree to TnC</label>
+            <input type="checkbox" class="form-check-input" name="crm">
+            <label class="form-check-label" for="crm">Create a new contact in HubSpot</label>
+          </div> 
+          <div class="form-check">
+            <input type="checkbox" class="form-check-input" name="db">
+            <label class="form-check-label" for="db">Link to Database</label>
           </div>     
           <div class="form-check">
-            <input type="checkbox" class="form-check-input" id="Check2" name="Check2">
-            <label class="form-check-label" for="Check2">Link to HubSpot</label>
-          </div>      
-          
-          <div> 
+            <input type="checkbox" class="form-check-input" name="slack">
+            <label class="form-check-label" for="slack">Notify in Slack Channel</label>
+          </div> 
+          <div class="form-check">
+            <input type="checkbox" class="form-check-input" name="mail">
+            <label class="form-check-label" for="mail">Send an Email</label>
+          </div>  
+           
+               
+          <div class="dropdown-divider"></div>
+          <div > 
             <button type="submit" class="btn btn-primary">@lang('form.button')</button>
           </div>
         </form>
@@ -114,6 +124,7 @@ var countryData = window.intlTelInputGlobals.getCountryData(),
 var iti = window.intlTelInput(input, {
   hiddenInput: "full_phone",
   initialCountry: "auto",
+  preferredCountries: ["my", "sg"],
   geoIpLookup: function(callback) {
     $.get('https://ipinfo.io', function() {}, "jsonp").always(function(resp) {
       var countryCode = (resp && resp.country) ? resp.country : "us";
@@ -150,7 +161,7 @@ $(function () {
   //   }
   // });
   
-  $('#ANTT').validate({
+  $('#signupform').validate({
     rules: {
       email: {
         required: true,

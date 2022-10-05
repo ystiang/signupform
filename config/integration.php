@@ -6,6 +6,7 @@
         'hubspot_client_secret' => env('HUBSPOT_CLIENT_SECRET', null),
         'hubspot_refresh_token' => env('HUBSPOT_REFRESH_TOKEN', null),
 
-        'slack_channel_antt' => env('SLACK_CHANNEL_ANTT', null),
+        'slack_channel' => env('SLACK_CHANNEL', null),
+
     ]
 ?>
