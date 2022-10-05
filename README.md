@@ -10,6 +10,30 @@ An interactive signup form developed with PHP Laravel
 This project can be installed just by cloning. Modify `signup.blade.php` to your desired view.
 
 ## Integration
+### Database 
+Configure these environment variables in the `.env` file:
+```
+DB_CONNECTION=
+DB_HOST=
+DB_PORT=
+DB_DATABASE=
+DB_USERNAME=
+DB_PASSWORD=
+```
+
+### Email
+Configure these environment variables in the `.env` file:
+```
+MAIL_MAILER=
+MAIL_HOST=
+MAIL_PORT=
+MAIL_USERNAME=
+MAIL_PASSWORD=
+MAIL_ENCRYPTION=
+MAIL_FROM_ADDRESS=
+MAIL_FROM_NAME=
+```
+
 ### HubSpot
 Add these environment variables to the `.env` file:
 
@@ -32,5 +56,5 @@ Add these environment variables to the `.env` file:
 ```
 SLACK_CHANNEL=XXXXX
 ```
-`XXXXX` indicates credentials you'll need for this integration. Create a Slack app (if you don't have one already). Obtain it at https://api.slack.com/apps and click inside your app Settings -> Features -> Incoming Webhooks, and add a new webhook of a channel to workspace.
+`XXXXX` indicates webhook URL you'll need for this integration to a Slack channel. Create a Slack app (if you don't have one already). Obtain the webhook URL or add one at https://api.slack.com/apps and click inside your app Settings -> Features -> Incoming Webhooks.
 Refer to https://api.slack.com/messaging/webhooks for more information.
