@@ -8,6 +8,15 @@ An interactive signup form developed with PHP Laravel
 
 ## Installation
 This project can be installed just by cloning. Modify `signup.blade.php` to your desired view.
+Run `composer require kamermans/guzzle-oauth2-subscriber` or add the following to your `composer.json`:
+
+```javascript
+    {
+        "require": {
+            "kamermans/guzzle-oauth2-subscriber": "~1.0"
+        }
+    }
+```
 
 ## Integration
 ### Database 
