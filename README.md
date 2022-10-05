@@ -8,7 +8,7 @@ An interactive signup form developed with PHP Laravel
 
 ## Installation
 This project can be installed just by cloning. Modify `signup.blade.php` to your desired view.
-Route: ```/{lang}/{id}``` -> Language is a required route paramater and referral ID is a optional route parameter.
+Route: ```/{lang}/{id}``` -> Language is a required route paramater ['en', 'cn'] and referral ID is a optional route parameter (default = "").
 Run `composer require kamermans/guzzle-oauth2-subscriber` or add the following to your `composer.json` to install Guzzle OAuth 2.0 Subscriber:
 
 ```javascript
